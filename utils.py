@@ -1,23 +1,30 @@
 from pprint import pprint as pp
 import re
+import sys
 
 class Utils:
 
-  def file_to_list(self, fname, secondArg=None):
+  def file_to_list(self, fname):
     try:
       with open(fname) as f:
         return f.readlines()
     except:
-      raise
-  
+      return []
+
+  def _strip_method_name(self, li):
+    return li.replace("def ", "").rstrip(":)")
+
+  def _split_args(self, args):
+    return [arg.strip() for arg in args.split(",") if not arg == "self"]
+
   def get_methods_signatures(self, lines):
     methods = {}
     for li in lines:
       li = li.strip()
       if li.startswith("def "):
-        li = li.replace("def ", "").rstrip(":)")
-        meth, args = li.split("(")
-        methods[meth] = [arg.strip() for arg in args.split(",") if not arg == "self"]
+        method = self._strip_method_name(li)
+        meth, args = method.split("(")
+        methods[meth] = self._split_args(args)
     return methods
 
   def _next_line_number(self, lineno):
@@ -38,8 +45,15 @@ class Utils:
       if li.startswith("def") and method in li:
         counting = True
         start = self._next_line_number(i)
-      # assumes no empty lines in method (keep methods short!)
       if counting and self._line_is_comment(li):
         comments += 1 
+      # assumes no empty lines in method (keep methods short!)
       if counting and self._white_line(li):
         return i - start - comments
+
+
+if __name__ == "__main__":
+  u = Utils()
+  lines = u.file_to_list(sys.argv[0])
+  print u.count_method_loc(lines, "count_method_loc") == 11
+

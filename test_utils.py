@@ -17,13 +17,17 @@ class TestUtils(unittest.TestCase):
   def test_file_to_list(self):
     self.assertIsInstance(self.testfile_lines, list)
     self.assertIn("import unittest\n", self.testfile_lines)
-    self.assertRaises(IOError, self.u.file_to_list, self.testfile+"_")
+    self.assertEqual(self.u.file_to_list(self.testfile+"_"), [])
+    try:
+      self.u.file_to_list(self.testfile+"_")
+    except IOError:
+      self.fail("file_to_list() raised IOError unexpectedly!")
 
   def test_get_methods_signatures(self):
     self.assertIn("test_file_to_list", self.u.get_methods_signatures(self.testfile_lines))
     self.assertIn("get_methods_signatures", self.u.get_methods_signatures(self.modfile_lines))
     self.assertIsInstance(self.u.get_methods_signatures(self.testfile_lines), dict)
-    self.assertEqual(len(self.u.get_methods_signatures(self.modfile_lines)["file_to_list"]), 2)
+    self.assertEqual(len(self.u.get_methods_signatures(self.modfile_lines)["file_to_list"]), 1)
     self.assertEqual(len(self.u.get_methods_signatures(self.modfile_lines)["get_methods_signatures"]), 1)
 
   def test_count_method_loc(self):
