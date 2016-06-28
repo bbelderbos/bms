@@ -1,0 +1,21 @@
+[constants]
+ext=.py
+branch_strings=if | and | or |while |for | except
+
+[unitrules]
+unit_size=15
+branch_points=4
+dup_lines=6
+num_params=4
+
+[modrules]
+interclass_calls=4
+intermod_calls=4
+
+[archrules]
+total_modules=9
+mod_size_deviation=0.5
+total_loc=40000
+
+[overall]
+test_coverage=0.8
