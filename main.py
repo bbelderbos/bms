@@ -67,11 +67,16 @@ def apply_rules(code):
   out = []
   out.append("\n" + create_header("A. Unit checks / B. Module checks"))
   for fi in code:
+    if not code[fi]: 
+      continue
     out.append(create_separator(">> File: " +fi, sep="="))
     out.append(create_separator("A. units"))
     for method, method_details in code[fi].items():
       out.append("\n- method: %s()" % method)
-      out.append(" > args: %s" % ", ".join(method_details["args"]))
+      if method_details["args"]:
+        out.append(" > args: %s" % ", ".join(method_details["args"]))
+      else:
+        out.append(" > no args")
       out.append(" - rule 1: short units (max 15 loc)")
       ur = UnitRules(method_details)
       out.append("  - %s" % str(ur.short_units()))
