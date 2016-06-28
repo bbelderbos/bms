@@ -12,7 +12,7 @@ COL_WIDTH = int(config.get("constants", "col_width"))
 
 def load_files(path):
   files = glob.glob(os.path.join(path, "*"+config.get("constants", "ext")))
-  return [fi for fi in files if not fi.startswith("test_")]
+  return [fi for fi in files if not os.path.basename(fi).startswith("test_")]
 
 def file_to_list(fname):
   with open(fname) as f:
@@ -125,5 +125,6 @@ if __name__ == "__main__":
     path = sys.argv[1]
   files = load_files(path)
   code = parse_files(files)
+  #pp(code); sys.exit()
   out = apply_rules(code)
   print_output(path)
