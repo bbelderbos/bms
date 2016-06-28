@@ -1,0 +1,245 @@
+
+********************************************************************************
+********************************************************************************
+************************* Code quality of ../quotebot/ *************************
+********************************************************************************
+********************************************************************************
+
+================================================================================
+* A. Unit checks / B. Module checks
+================================================================================
+
+>> File: ../quotebot/test_quotes.py
+================================================================================
+
+A. units
+--------------------------------------------------------------------------------
+
+- method:   test_get_quote()
+ > args: 
+ - rule 1: short units (max 15 loc)
+  - (4, True)
+ - rule 2: simple units (max 4 branch points)
+  - (0, True)
+ - rule 3: duplicates
+  - #TODO
+ - rule 4: small interfaces (max 4 params)
+  - (0, True)
+
+- method:   test_get_max_quote_len()
+ > args: 
+ - rule 1: short units (max 15 loc)
+  - (2, True)
+ - rule 2: simple units (max 4 branch points)
+  - (0, True)
+ - rule 3: duplicates
+  - #TODO
+ - rule 4: small interfaces (max 4 params)
+  - (0, True)
+
+- method:   test_post_to_twitter()
+ > args: mock_update_status
+ - rule 1: short units (max 15 loc)
+  - (3, True)
+ - rule 2: simple units (max 4 branch points)
+  - (0, True)
+ - rule 3: duplicates
+  - #TODO
+ - rule 4: small interfaces (max 4 params)
+  - (1, True)
+
+- method:   setUp()
+ > args: 
+ - rule 1: short units (max 15 loc)
+  - (7, True)
+ - rule 2: simple units (max 4 branch points)
+  - (0, True)
+ - rule 3: duplicates
+  - #TODO
+ - rule 4: small interfaces (max 4 params)
+  - (0, True)
+
+- method:   test_create_tweet()
+ > args: 
+ - rule 1: short units (max 15 loc)
+  - (5, True)
+ - rule 2: simple units (max 4 branch points)
+  - (0, True)
+ - rule 3: duplicates
+  - #TODO
+ - rule 4: small interfaces (max 4 params)
+  - (0, True)
+
+- method:   test_strip_html()
+ > args: 
+ - rule 1: short units (max 15 loc)
+  - (2, True)
+ - rule 2: simple units (max 4 branch points)
+  - (0, True)
+ - rule 3: duplicates
+  - #TODO
+ - rule 4: small interfaces (max 4 params)
+  - (0, True)
+
+- method:   test_html_unescape()
+ > args: 
+ - rule 1: short units (max 15 loc)
+  - (3, True)
+ - rule 2: simple units (max 4 branch points)
+  - (0, True)
+ - rule 3: duplicates
+  - #TODO
+ - rule 4: small interfaces (max 4 params)
+  - (0, True)
+
+B. modules
+--------------------------------------------------------------------------------
+ - rule 5: loose coupling modules
+  - #TODO
+ - rule 6: loose coupling component architecture
+  - #TODO
+
+
+
+>> File: ../quotebot/config.py
+================================================================================
+
+A. units
+--------------------------------------------------------------------------------
+
+B. modules
+--------------------------------------------------------------------------------
+ - rule 5: loose coupling modules
+  - #TODO
+ - rule 6: loose coupling component architecture
+  - #TODO
+
+
+
+>> File: ../quotebot/quotes.py
+================================================================================
+
+A. units
+--------------------------------------------------------------------------------
+
+- method:   __str__()
+ > args: 
+ - rule 1: short units (max 15 loc)
+  - (9, True)
+ - rule 2: simple units (max 4 branch points)
+  - (0, True)
+ - rule 3: duplicates
+  - #TODO
+ - rule 4: small interfaces (max 4 params)
+  - (0, True)
+
+- method: get_quote()
+ > args: url
+ - rule 1: short units (max 15 loc)
+  - (5, True)
+ - rule 2: simple units (max 4 branch points)
+  - (0, True)
+ - rule 3: duplicates
+  - #TODO
+ - rule 4: small interfaces (max 4 params)
+  - (1, True)
+
+- method: get_max_quote_len()
+ > args: title
+ - rule 1: short units (max 15 loc)
+  - (1, True)
+ - rule 2: simple units (max 4 branch points)
+  - (0, True)
+ - rule 3: duplicates
+  - #TODO
+ - rule 4: small interfaces (max 4 params)
+  - (1, True)
+
+- method: strip_html()
+ > args: q
+ - rule 1: short units (max 15 loc)
+  - (1, True)
+ - rule 2: simple units (max 4 branch points)
+  - (0, True)
+ - rule 3: duplicates
+  - #TODO
+ - rule 4: small interfaces (max 4 params)
+  - (1, True)
+
+- method: html_unescape()
+ > args: s
+ - rule 1: short units (max 15 loc)
+  - (1, True)
+ - rule 2: simple units (max 4 branch points)
+  - (0, True)
+ - rule 3: duplicates
+  - #TODO
+ - rule 4: small interfaces (max 4 params)
+  - (1, True)
+
+- method:   post_tweet()
+ > args: status
+ - rule 1: short units (max 15 loc)
+  - (2, True)
+ - rule 2: simple units (max 4 branch points)
+  - (0, True)
+ - rule 3: duplicates
+  - #TODO
+ - rule 4: small interfaces (max 4 params)
+  - (1, True)
+
+- method:   __init__()
+ > args: value
+ - rule 1: short units (max 15 loc)
+  - (1, True)
+ - rule 2: simple units (max 4 branch points)
+  - (0, True)
+ - rule 3: duplicates
+  - #TODO
+ - rule 4: small interfaces (max 4 params)
+  - (1, True)
+
+- method: create_tweet()
+ > args: q
+ - rule 1: short units (max 15 loc)
+  - (9, True)
+ - rule 2: simple units (max 4 branch points)
+  - (2, True)
+ - rule 3: duplicates
+  - #TODO
+ - rule 4: small interfaces (max 4 params)
+  - (1, True)
+
+B. modules
+--------------------------------------------------------------------------------
+ - rule 5: loose coupling modules
+  - #TODO
+ - rule 6: loose coupling component architecture
+  - #TODO
+
+
+
+================================================================================
+* C. Overall architecture checks
+================================================================================
+ - rule 7: balance components
+  > a. max 9 files / components
+  - (3, True)
+  > b. +/- equally sized modules (max dev 0.71)
+  - (0.3641025641025641, True)
+ - rule 8: small code base (< 40K loc)
+  - (130, True)
+
+================================================================================
+* D. Overall best practices checks
+================================================================================
+ - rule 9: test coverage
+  - #TODO
+ - rule 10: best practices
+  - #TODO (if measurable)
+
+
+================================================================================
+* SUMMARY
+================================================================================
+0 warnings to review

@@ -1,0 +1,415 @@
+
+********************************************************************************
+********************************************************************************
+************************ Code quality of ../themoviedb/ ************************
+********************************************************************************
+********************************************************************************
+
+================================================================================
+* A. Unit checks / B. Module checks
+================================================================================
+
+>> File: ../themoviedb/tmdb.py
+================================================================================
+
+A. units
+--------------------------------------------------------------------------------
+
+- method:   _get_latest_movie_ids()
+ > args: results
+ - rule 1: short units (max 15 loc)
+  - (1, True)
+ - rule 2: simple units (max 4 branch points)
+  - (0, True)
+ - rule 3: duplicates
+  - #TODO
+ - rule 4: small interfaces (max 4 params)
+  - (1, True)
+
+- method:   __init__()
+ > args: key, category
+ - rule 1: short units (max 15 loc)
+  - (4, True)
+ - rule 2: simple units (max 4 branch points)
+  - (0, True)
+ - rule 3: duplicates
+  - #TODO
+ - rule 4: small interfaces (max 4 params)
+  - (2, True)
+
+- method:   _get_num_pages()
+ > args: numres
+ - rule 1: short units (max 15 loc)
+  - (4, True)
+ - rule 2: simple units (max 4 branch points)
+  - (0, True)
+ - rule 3: duplicates
+  - #TODO
+ - rule 4: small interfaces (max 4 params)
+  - (1, True)
+
+- method:   get_movies()
+ > args: numres
+ - rule 1: short units (max 15 loc)
+  - (6, True)
+ - rule 2: simple units (max 4 branch points)
+  - (1, True)
+ - rule 3: duplicates
+  - #TODO
+ - rule 4: small interfaces (max 4 params)
+  - (1, True)
+
+B. modules
+--------------------------------------------------------------------------------
+ - rule 5: loose coupling modules
+  - #TODO
+ - rule 6: loose coupling component architecture
+  - #TODO
+
+
+
+>> File: ../themoviedb/cache.py
+================================================================================
+
+A. units
+--------------------------------------------------------------------------------
+
+- method:   _time_passed()
+ > args: 
+ - rule 1: short units (max 15 loc)
+  - (4, True)
+ - rule 2: simple units (max 4 branch points)
+  - (0, True)
+ - rule 3: duplicates
+  - #TODO
+ - rule 4: small interfaces (max 4 params)
+  - (0, True)
+
+- method:   __init__()
+ > args: category
+ - rule 1: short units (max 15 loc)
+  - (2, True)
+ - rule 2: simple units (max 4 branch points)
+  - (0, True)
+ - rule 3: duplicates
+  - #TODO
+ - rule 4: small interfaces (max 4 params)
+  - (1, True)
+
+- method:   shelve_results()
+ > args: movieIds
+ - rule 1: short units (max 15 loc)
+  - (22, False)                                         <<<<<<<<<<<<<<<<<<<<<<<<<<
+ - rule 2: simple units (max 4 branch points)
+  - (3, True)
+ - rule 3: duplicates
+  - #TODO
+ - rule 4: small interfaces (max 4 params)
+  - (1, True)
+
+- method:   shelve_get_items()
+ > args: movieIds
+ - rule 1: short units (max 15 loc)
+  - (7, True)
+ - rule 2: simple units (max 4 branch points)
+  - (2, True)
+ - rule 3: duplicates
+  - #TODO
+ - rule 4: small interfaces (max 4 params)
+  - (1, True)
+
+B. modules
+--------------------------------------------------------------------------------
+ - rule 5: loose coupling modules
+  - #TODO
+ - rule 6: loose coupling component architecture
+  - #TODO
+
+
+
+>> File: ../themoviedb/listing.py
+================================================================================
+
+A. units
+--------------------------------------------------------------------------------
+
+- method:   _download()
+ > args: url, user_agent='wswp', num_retries=2
+ - rule 1: short units (max 15 loc)
+  - (12, True)
+ - rule 2: simple units (max 4 branch points)
+  - (2, True)
+ - rule 3: duplicates
+  - #TODO
+ - rule 4: small interfaces (max 4 params)
+  - (3, True)
+
+- method:   get_movies()
+ > args: 
+ - rule 1: short units (max 15 loc)
+  - (2, True)
+ - rule 2: simple units (max 4 branch points)
+  - (0, True)
+ - rule 3: duplicates
+  - #TODO
+ - rule 4: small interfaces (max 4 params)
+  - (0, True)
+
+- method:   __init__()
+ > args: url
+ - rule 1: short units (max 15 loc)
+  - (4, True)
+ - rule 2: simple units (max 4 branch points)
+  - (0, True)
+ - rule 3: duplicates
+  - #TODO
+ - rule 4: small interfaces (max 4 params)
+  - (1, True)
+
+- method:   _get_title()
+ > args: 
+ - rule 1: short units (max 15 loc)
+  - (1, True)
+ - rule 2: simple units (max 4 branch points)
+  - (0, True)
+ - rule 3: duplicates
+  - #TODO
+ - rule 4: small interfaces (max 4 params)
+  - (0, True)
+
+B. modules
+--------------------------------------------------------------------------------
+ - rule 5: loose coupling modules
+  - #TODO
+ - rule 6: loose coupling component architecture
+  - #TODO
+
+
+
+>> File: ../themoviedb/main.py
+================================================================================
+
+A. units
+--------------------------------------------------------------------------------
+
+- method: main()
+ > args: 
+ - rule 1: short units (max 15 loc)
+  - (28, False)                                         <<<<<<<<<<<<<<<<<<<<<<<<<<
+ - rule 2: simple units (max 4 branch points)
+  - (4, True)
+ - rule 3: duplicates
+  - #TODO
+ - rule 4: small interfaces (max 4 params)
+  - (1, True)
+
+- method: load_emails()
+ > args: fname
+ - rule 1: short units (max 15 loc)
+  - (2, True)
+ - rule 2: simple units (max 4 branch points)
+  - (0, True)
+ - rule 3: duplicates
+  - #TODO
+ - rule 4: small interfaces (max 4 params)
+  - (1, True)
+
+- method: get_value()
+ > args: fname
+ - rule 1: short units (max 15 loc)
+  - (2, True)
+ - rule 2: simple units (max 4 branch points)
+  - (0, True)
+ - rule 3: duplicates
+  - #TODO
+ - rule 4: small interfaces (max 4 params)
+  - (1, True)
+
+- method: cli()
+ > args: 
+ - rule 1: short units (max 15 loc)
+  - (21, False)                                         <<<<<<<<<<<<<<<<<<<<<<<<<<
+ - rule 2: simple units (max 4 branch points)
+  - (5, False)                                         <<<<<<<<<<<<<<<<<<<<<<<<<<
+ - rule 3: duplicates
+  - #TODO
+ - rule 4: small interfaces (max 4 params)
+  - (1, True)
+
+B. modules
+--------------------------------------------------------------------------------
+ - rule 5: loose coupling modules
+  - #TODO
+ - rule 6: loose coupling component architecture
+  - #TODO
+
+
+
+>> File: ../themoviedb/mail.py
+================================================================================
+
+A. units
+--------------------------------------------------------------------------------
+
+- method:   mail_html()
+ > args: recipients, subject, content
+ - rule 1: short units (max 15 loc)
+  - (11, True)
+ - rule 2: simple units (max 4 branch points)
+  - (0, True)
+ - rule 3: duplicates
+  - #TODO
+ - rule 4: small interfaces (max 4 params)
+  - (3, True)
+
+- method:   __init__()
+ > args: sender
+ - rule 1: short units (max 15 loc)
+  - (1, True)
+ - rule 2: simple units (max 4 branch points)
+  - (0, True)
+ - rule 3: duplicates
+  - #TODO
+ - rule 4: small interfaces (max 4 params)
+  - (1, True)
+
+B. modules
+--------------------------------------------------------------------------------
+ - rule 5: loose coupling modules
+  - #TODO
+ - rule 6: loose coupling component architecture
+  - #TODO
+
+
+
+>> File: ../themoviedb/weekly.py
+================================================================================
+
+A. units
+--------------------------------------------------------------------------------
+
+- method: main()
+ > args: send=False
+ - rule 1: short units (max 15 loc)
+  - (24, False)                                         <<<<<<<<<<<<<<<<<<<<<<<<<<
+ - rule 2: simple units (max 4 branch points)
+  - (3, True)
+ - rule 3: duplicates
+  - #TODO
+ - rule 4: small interfaces (max 4 params)
+  - (1, True)
+
+B. modules
+--------------------------------------------------------------------------------
+ - rule 5: loose coupling modules
+  - #TODO
+ - rule 6: loose coupling component architecture
+  - #TODO
+
+
+
+>> File: ../themoviedb/output.py
+================================================================================
+
+A. units
+--------------------------------------------------------------------------------
+
+- method:   generate_header()
+ > args: 
+ - rule 1: short units (max 15 loc)
+  - (2, True)
+ - rule 2: simple units (max 4 branch points)
+  - (0, True)
+ - rule 3: duplicates
+  - #TODO
+ - rule 4: small interfaces (max 4 params)
+  - (0, True)
+
+- method:   generate_category_title()
+ > args: title
+ - rule 1: short units (max 15 loc)
+  - (1, True)
+ - rule 2: simple units (max 4 branch points)
+  - (0, True)
+ - rule 3: duplicates
+  - #TODO
+ - rule 4: small interfaces (max 4 params)
+  - (1, True)
+
+- method:   _html()
+ > args: tag, name, link=None
+ - rule 1: short units (max 15 loc)
+  - (6, True)
+ - rule 2: simple units (max 4 branch points)
+  - (1, True)
+ - rule 3: duplicates
+  - #TODO
+ - rule 4: small interfaces (max 4 params)
+  - (3, True)
+
+- method:   _get_persons()
+ > args: cast, typePerson="actors"
+ - rule 1: short units (max 15 loc)
+  - (8, True)
+ - rule 2: simple units (max 4 branch points)
+  - (3, True)
+ - rule 3: duplicates
+  - #TODO
+ - rule 4: small interfaces (max 4 params)
+  - (2, True)
+
+- method:   __init__()
+ > args: movies
+ - rule 1: short units (max 15 loc)
+  - (11, True)
+ - rule 2: simple units (max 4 branch points)
+  - (0, True)
+ - rule 3: duplicates
+  - #TODO
+ - rule 4: small interfaces (max 4 params)
+  - (1, True)
+
+- method:   generate_movie_html_div()
+ > args: 
+ - rule 1: short units (max 15 loc)
+  - (23, False)                                         <<<<<<<<<<<<<<<<<<<<<<<<<<
+ - rule 2: simple units (max 4 branch points)
+  - (3, True)
+ - rule 3: duplicates
+  - #TODO
+ - rule 4: small interfaces (max 4 params)
+  - (0, True)
+
+B. modules
+--------------------------------------------------------------------------------
+ - rule 5: loose coupling modules
+  - #TODO
+ - rule 6: loose coupling component architecture
+  - #TODO
+
+
+
+================================================================================
+* C. Overall architecture checks
+================================================================================
+ - rule 7: balance components
+  > a. max 9 files / components
+  - (7, True)
+  > b. +/- equally sized modules (max dev 0.71)
+  - (0.23142857142857143, True)
+ - rule 8: small code base (< 40K loc)
+  - (300, True)
+
+================================================================================
+* D. Overall best practices checks
+================================================================================
+ - rule 9: test coverage
+  - #TODO
+ - rule 10: best practices
+  - #TODO (if measurable)
+
+
+================================================================================
+* SUMMARY
+================================================================================
+6 warnings to review
