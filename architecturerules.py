@@ -1,5 +1,6 @@
 import ConfigParser 
 from pprint import pprint as pp
+import sys
 
 config = ConfigParser.ConfigParser()
 config.read("conf")
@@ -21,18 +22,27 @@ class ArchitectureRules:
     return num_files, \
       num_files < config.get("archrules", "total_modules")
 
+  def _gini(self, list_of_values):
+    # http://planspace.org/2013/06/21/how-to-calculate-gini-coefficient-from-raw-data-in-python/
+    sorted_list = sorted(list_of_values)
+    height, area = 0, 0
+    for value in sorted_list:
+        height += value
+        area += height - value / 2.
+    fair_area = height * len(list_of_values) / 2.
+    return (fair_area - area) / fair_area
+
   def similar_size_components(self):
     sizes = self.locs.values()
-    mean = float(sum(sizes)) / len(sizes)
-    deviations = []
-    for s in sizes:
-      dev = abs((s - mean)) / mean
-      deviations.append(dev)
-    for dev in sorted(deviations):
-      if dev > float(config.get("archrules", "mod_size_deviation")):
-        return dev, False
-    return dev, True
+    gini = self._gini(sizes) 
+    return gini, \
+      gini < float(config.get("archrules", "gini_coefficient"))
 
   def total_size_code_base(self):
     tot_loc = sum(self.locs.values())
     return tot_loc, tot_loc < config.get("archrules", "total_loc")
+
+if __name__ == "__main__":
+  a = ArchitectureRules({})
+  # 0.66
+  print a._gini([0,0,1])
