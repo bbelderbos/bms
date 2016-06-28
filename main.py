@@ -25,9 +25,9 @@ def get_methods(lines):
   methods = {}
   meth = False
   for li in lines:
-    if li.lstrip().startswith("def "):
-      method = li.replace("def ", "").rstrip().rstrip(":)") 
-      meth, args = method.split("(")
+    li = li.strip()
+    if li.startswith("def "):
+      meth, args = li.replace("def ", "").rstrip(":)") .split("(")
       methods[meth] = {
         "lines" : [],
         "args"  : get_method_args(args), 
